@@ -57,4 +57,4 @@ if ! [ -f ~/.grass-configured ]; then
     touch ~/.grass-configured
 fi
 
-fg %/usr/bin/grass & google-chrome
+fg %/usr/bin/grass & rm -f ~/.config/google-chrome/Singleton{Cookie,Lock,Socket}; google-chrome
