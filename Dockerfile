@@ -28,6 +28,7 @@ RUN update-ca-certificates
 RUN wget -q -O- https://packagecloud.io/dcommander/turbovnc/gpgkey | gpg --dearmor > /etc/apt/trusted.gpg.d/TurboVNC.gpg
 RUN wget -q -O /etc/apt/sources.list.d/turbovnc.list https://raw.githubusercontent.com/TurboVNC/repo/main/TurboVNC.list
 RUN apt-get -y update; apt-get -y install turbovnc
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && dpkg -i *deb && rm *deb
 
 # Install grass, fixing package
 COPY --from=grass-desktop-package-builder /tmp/grass.deb /tmp/grass.deb
